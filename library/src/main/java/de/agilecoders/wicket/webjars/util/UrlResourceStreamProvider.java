@@ -1,6 +1,6 @@
 package de.agilecoders.wicket.webjars.util;
 
-import org.apache.wicket.core.util.resource.UrlResourceStream;
+import org.apache.wicket.util.resource.UrlResourceStream;
 import org.apache.wicket.util.resource.IResourceStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

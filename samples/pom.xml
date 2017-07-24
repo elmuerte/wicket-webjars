@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>de.agilecoders.wicket.webjars</groupId>
-        <artifactId>wicket-webjars-parent</artifactId>
+        <artifactId>wicket-webjars-legacy-parent</artifactId>
         <version>2.0.4-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
@@ -15,12 +15,12 @@
     <dependencies>
         <dependency>
             <groupId>de.agilecoders.wicket.webjars</groupId>
-            <artifactId>wicket-webjars</artifactId>
+            <artifactId>wicket-webjars-legacy</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-core</artifactId>
+            <artifactId>wicket</artifactId>
         </dependency>
 
         <dependency>

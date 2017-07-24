@@ -4,12 +4,12 @@
 
     <parent>
         <groupId>de.agilecoders.wicket.webjars</groupId>
-        <artifactId>wicket-webjars-parent</artifactId>
+        <artifactId>wicket-webjars-legacy-parent</artifactId>
         <version>2.0.4-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>wicket-webjars</artifactId>
+    <artifactId>wicket-webjars-legacy</artifactId>
     <packaging>jar</packaging>
     <name>library</name>
 
@@ -17,7 +17,7 @@
         <!-- WICKET DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-core</artifactId>
+            <artifactId>wicket</artifactId>
         </dependency>
         
         <!-- Needed for deployments on IBM WebSphere -->
@@ -50,8 +50,7 @@
 
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <artifactId>servlet-api</artifactId>
             <scope>test</scope>
         </dependency>
 

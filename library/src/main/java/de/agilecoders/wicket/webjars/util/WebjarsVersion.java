@@ -1,11 +1,6 @@
 package de.agilecoders.wicket.webjars.util;
 
-import de.agilecoders.wicket.webjars.WicketWebjars;
-import de.agilecoders.wicket.webjars.settings.IWebjarsSettings;
-import org.apache.wicket.util.lang.Args;
-import org.apache.wicket.util.time.Duration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static de.agilecoders.wicket.webjars.util.Helper.prependWebjarsPathIfMissing;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -14,7 +9,12 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import static de.agilecoders.wicket.webjars.util.Helper.prependWebjarsPathIfMissing;
+import org.apache.wicket.util.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import de.agilecoders.wicket.webjars.WicketWebjars;
+import de.agilecoders.wicket.webjars.settings.IWebjarsSettings;
 
 /**
  * Collects recent versions of webjars resources.
@@ -23,7 +23,7 @@ import static de.agilecoders.wicket.webjars.util.Helper.prependWebjarsPathIfMiss
  */
 public final class WebjarsVersion {
     private static final Logger LOG = LoggerFactory.getLogger(WicketWebjars.class);
-    private static final ConcurrentMap<String, FutureTask<String>> VERSIONS_CACHE = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<String, FutureTask<String>> VERSIONS_CACHE = new ConcurrentHashMap<String, FutureTask<String>>();
 
     private static final class Holder {
         private static final IWebjarsSettings settings = WicketWebjars.settings();
@@ -69,7 +69,11 @@ public final class WebjarsVersion {
 
         try {
             return VERSIONS_CACHE.get(partialPath).get(Holder.timeout.getMilliseconds(), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+        } catch (InterruptedException e) {
+            LOG.error("can't collect recent version of {}; {}", partialPath, e.getMessage());
+        } catch (ExecutionException  e) {
+            LOG.error("can't collect recent version of {}; {}", partialPath, e.getMessage());
+        } catch (TimeoutException e) {
             LOG.error("can't collect recent version of {}; {}", partialPath, e.getMessage());
         }
 

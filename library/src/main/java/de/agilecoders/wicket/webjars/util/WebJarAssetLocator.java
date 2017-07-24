@@ -1,9 +1,6 @@
 package de.agilecoders.wicket.webjars.util;
 
-import de.agilecoders.wicket.webjars.collectors.AssetsMap;
-import de.agilecoders.wicket.webjars.collectors.IAssetProvider;
-import de.agilecoders.wicket.webjars.settings.IWebjarsSettings;
-import org.apache.wicket.util.lang.Args;
+import static de.agilecoders.wicket.webjars.util.Helper.reversePath;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -12,7 +9,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedMap;
 
-import static de.agilecoders.wicket.webjars.util.Helper.reversePath;
+import de.agilecoders.wicket.webjars.collectors.AssetsMap;
+import de.agilecoders.wicket.webjars.collectors.IAssetProvider;
+import de.agilecoders.wicket.webjars.settings.IWebjarsSettings;
 
 /**
  * Locate WebJar assets. The class is thread safe.

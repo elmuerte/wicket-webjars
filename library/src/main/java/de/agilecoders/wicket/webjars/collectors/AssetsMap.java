@@ -42,7 +42,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
         this.settings = settings;
         this.collectors = settings.assetPathCollectors();
         this.recentVersionPlaceHolder = settings.recentVersionPlaceHolder();
-        this.fullPathIndex = new TreeMap<>();
+        this.fullPathIndex = new TreeMap<String, String>();
         reindex();
     }
 
@@ -63,7 +63,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
         if (partialPathMatcher.find() && recentVersionPlaceHolder.equalsIgnoreCase(partialPathMatcher.group(2))) {
             final Set<String> assets = listAssets(partialPathMatcher.group(1));
             final String fileName = "/" + partialPathMatcher.group(3);
-            final List<String> versions = new ArrayList<>();
+            final List<String> versions = new ArrayList<String>();
 
             for (String asset : assets) {
                 if (asset.endsWith(fileName)) {
@@ -101,7 +101,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
     public Set<String> listAssets(final String folderPath) {
         final Collection<String> allAssets = getFullPathIndex().values();
 
-        final Set<String> assets = new HashSet<>();
+        final Set<String> assets = new HashSet<String>();
 
         final String prefix;
         final String webjarsPath = settings.webjarsPath();
@@ -125,7 +125,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
      * either identifying JAR files or plain directories.
      */
     private Set<URL> listWebjarsParentURLs(final ClassLoader[] classLoaders) {
-        final Set<URL> urls = new HashSet<>();
+        final Set<URL> urls = new HashSet<URL>();
         final String webjarsPath = settings.webjarsPath();
 
         for (final ClassLoader classLoader : classLoaders) {
@@ -145,7 +145,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
      * Return all of the resource paths filtered given an expression and a list of class loaders.
      */
     private Set<String> getAssetPaths(final Pattern filterExpr, final ClassLoader... classLoaders) {
-        final Set<String> assetPaths = new HashSet<>();
+        final Set<String> assetPaths = new HashSet<String>();
         
         final Set<URL> urls = listWebjarsParentURLs(classLoaders);
 
@@ -174,7 +174,7 @@ public class AssetsMap implements IAssetProvider, IRecentVersionProvider {
     private SortedMap<String, String> createFullPathIndex(final Pattern filterExpr, final ClassLoader... classLoaders) {
         final Set<String> assetPaths = getAssetPaths(filterExpr, classLoaders);
 
-        final SortedMap<String, String> assetPathIndex = new TreeMap<>();
+        final SortedMap<String, String> assetPathIndex = new TreeMap<String, String>();
         for (final String assetPath : assetPaths) {
             assetPathIndex.put(reversePath(assetPath), assetPath);
         }

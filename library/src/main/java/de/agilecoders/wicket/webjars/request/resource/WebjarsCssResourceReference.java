@@ -1,10 +1,8 @@
 package de.agilecoders.wicket.webjars.request.resource;
 
-import org.apache.wicket.request.resource.CssResourceReference;
-
-import java.util.Locale;
-
 import static de.agilecoders.wicket.webjars.util.WebjarsVersion.useRecent;
+
+import org.apache.wicket.markup.html.resources.CompressedResourceReference;
 
 /**
  * Static resource reference for webjars css resources. The resources are filtered (stripped comments and
@@ -15,7 +13,7 @@ import static de.agilecoders.wicket.webjars.util.WebjarsVersion.useRecent;
  *
  * @author miha
  */
-public class WebjarsCssResourceReference extends CssResourceReference implements IWebjarsResourceReference {
+public class WebjarsCssResourceReference extends CompressedResourceReference implements IWebjarsResourceReference {
 
     final String originalName;
 
@@ -36,21 +34,6 @@ public class WebjarsCssResourceReference extends CssResourceReference implements
     @Override
     public final String getOriginalName() {
         return originalName;
-    }
-
-    @Override
-    public final Locale getLocale() {
-        return null;
-    }
-
-    @Override
-    public final String getStyle() {
-        return null;
-    }
-
-    @Override
-    public final String getVariation() {
-        return null;
     }
 
     @Override

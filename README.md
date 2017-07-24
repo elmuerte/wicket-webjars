@@ -1,17 +1,15 @@
-wicket-webjars
-==============
+wicket-webjars-legacy
+=====================
 
-Integration of webjars for Apache Wicket. 
+Integration of webjars for Apache Wicket. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
-Current build status: [![Build Status](https://buildhive.cloudbees.com/job/l0rdn1kk0n/job/wicket-webjars/badge/icon)](https://buildhive.cloudbees.com/job/l0rdn1kk0n/job/wicket-webjars/)
+Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars.svg?branch=master)](https://travis-ci.org/elmuerte/wicket-webjars)
 
 **wicket-webjars** dependes on [webjars](https://github.com/webjars/webjars).
 
-Current release version:
+This build is only for wicket 1.4.x.
 
-* For Wicket 8.x use 2.x
-* For Wicket 7.x use 0.5.x
-* For Wicket 6.x use 0.4.x
+For newer versions of wicket please use the original [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars)
 
 
 Documentation:
@@ -24,8 +22,8 @@ Add maven dependency:
 ```xml
 <dependency>
   <groupId>de.agilecoders.wicket.webjars</groupId>
-  <artifactId>wicket-webjars</artifactId>
-  <version>0.4.10</version>
+  <artifactId>wicket-webjars-legacy</artifactId>
+  <version>2.0.4</version>
 </dependency>
 ```
 
@@ -75,7 +73,7 @@ Add dependencies to your pom.xml:
 <dependencies>
   <dependency>
       <groupId>de.agilecoders.wicket.webjars</groupId>
-      <artifactId>wicket-webjars</artifactId>
+      <artifactId>wicket-webjars-legacy</artifactId>
   </dependency>
 
   <dependency>
@@ -85,14 +83,6 @@ Add dependencies to your pom.xml:
   </dependency>
 </dependencies>
 ```
-
-It is also possible to use a resource by adding it to your html markup directly:
-
-```html
-<img src="/webjars/jquery-ui/1.9.2/css/smoothness/images/ui-icons_cd0a0a_256x240.png"/>
-```
-
-**Note**: The above works only for Servlet 3 web containers! Embedded Jetty needs extra configuration to enable this feature!
 
 To use always recent version from your pom you have to replace the version in path with the string "current". When resource
 name gets resolved this string will be replaced by recent available version in classpath. (this feature is available since 0.2.0)
@@ -121,4 +111,3 @@ Authors
 [![Ohloh profile for Martin Grigorov](https://www.openhub.net/accounts/mgrigorov/widgets/account_detailed.gif)](https://www.openhub.net/accounts/mgrigorov?ref=Detailed)
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/l0rdn1kk0n/wicket-webjars/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

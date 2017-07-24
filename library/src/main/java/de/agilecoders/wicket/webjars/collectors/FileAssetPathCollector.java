@@ -51,7 +51,7 @@ public class FileAssetPathCollector extends ProtocolAwareAssetPathCollector {
      * @return all files that matches given filter
      */
     private Set<String> listFiles(final File file, final Pattern filterExpr) {
-        final Set<String> aggregatedChildren = new HashSet<>();
+        final Set<String> aggregatedChildren = new HashSet<String>();
         aggregateChildren(file, aggregatedChildren, filterExpr);
         return aggregatedChildren;
     }

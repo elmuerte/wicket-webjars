@@ -27,7 +27,7 @@ public class ClasspathAssetPathCollector implements AssetPathCollector {
 
     @Override
     public Collection<String> collect(final URL url, final Pattern filterExpr) {
-        final Set<String> assetPaths = new HashSet<>();
+        final Set<String> assetPaths = new HashSet<String>();
         try {
             Set<String> paths = collectFromWebJarPath(url, filterExpr);
             assetPaths.addAll(paths);
@@ -38,7 +38,7 @@ public class ClasspathAssetPathCollector implements AssetPathCollector {
     }
 
     private Set<String> collectFromWebJarPath(URL webJarPathResource, final Pattern filterExpr) throws IOException {
-        final Set<String> assetPaths = new HashSet<>();
+        final Set<String> assetPaths = new HashSet<String>();
 
         URLConnection urlConnection = webJarPathResource.openConnection();
         if (urlConnection instanceof JarURLConnection) {
