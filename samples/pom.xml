@@ -4,18 +4,19 @@
 
     <parent>
         <groupId>de.agilecoders.wicket.webjars</groupId>
-        <artifactId>wicket-webjars-legacy-parent</artifactId>
+        <artifactId>wicket-webjars-legacy14-parent</artifactId>
         <version>2.0.4-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>samples</artifactId>
+    <artifactId>samples-legacy14</artifactId>
     <packaging>war</packaging>
+    <name>samples</name>
 
     <dependencies>
         <dependency>
             <groupId>de.agilecoders.wicket.webjars</groupId>
-            <artifactId>wicket-webjars-legacy</artifactId>
+            <artifactId>wicket-webjars-legacy14</artifactId>
         </dependency>
 
         <dependency>

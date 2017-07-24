@@ -22,7 +22,7 @@ Add maven dependency:
 ```xml
 <dependency>
   <groupId>de.agilecoders.wicket.webjars</groupId>
-  <artifactId>wicket-webjars-legacy</artifactId>
+  <artifactId>wicket-webjars-legacy14</artifactId>
   <version>2.0.4</version>
 </dependency>
 ```
@@ -73,7 +73,7 @@ Add dependencies to your pom.xml:
 <dependencies>
   <dependency>
       <groupId>de.agilecoders.wicket.webjars</groupId>
-      <artifactId>wicket-webjars-legacy</artifactId>
+      <artifactId>wicket-webjars-legacy14</artifactId>
   </dependency>
 
   <dependency>
@@ -102,6 +102,15 @@ public WebjarsComponent extends Panel {
   }
 }
 ```
+
+Limitations
+===========
+
+The following functionality from wicket-webjars 2.x is not supported in this backport:
+
+- CDN
+- /webjar/ urls in the HTML; this depends on Servlet 3 containers
+
 
 Authors
 -------
