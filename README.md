@@ -3,13 +3,14 @@ wicket-webjars-legacy
 
 Integration of webjars for Apache Wicket. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
-Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars.svg?branch=master)](https://travis-ci.org/elmuerte/wicket-webjars)
+Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars-legacy14.svg?branch=master)](https://travis-ci.org/elmuerte/wicket-webjars-legacy14)
 
-**wicket-webjars** dependes on [webjars](https://github.com/webjars/webjars).
+wicket-webjars dependes on [webjars](https://github.com/webjars/webjars).
 
-This build is only for wicket 1.4.x.
 
-For newer versions of wicket please use the original [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars)
+**Note** This version is only for wicket 1.4.x.
+
+For newer versions of wicket please use the original [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars).
 
 
 Documentation:
@@ -120,3 +121,6 @@ Authors
 [![Ohloh profile for Martin Grigorov](https://www.openhub.net/accounts/mgrigorov/widgets/account_detailed.gif)](https://www.openhub.net/accounts/mgrigorov?ref=Detailed)
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/l0rdn1kk0n/wicket-webjars/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+Michiel Hendriks (wicket 1.4.x backport)
+
