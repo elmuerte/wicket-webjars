@@ -4,6 +4,8 @@ import static de.agilecoders.wicket.webjars.util.WebjarsVersion.useRecent;
 
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
+import de.agilecoders.wicket.webjars.util.Helper;
+
 /**
  * Static resource reference for javascript webjars resources. The resources are filtered (stripped comments
  * and whitespace) if there is a registered compressor.
@@ -23,7 +25,7 @@ public class WebjarsJavaScriptResourceReference extends JavascriptResourceRefere
      * @param name The webjars path to load
      */
     public WebjarsJavaScriptResourceReference(final String name) {
-        super(WebjarsJavaScriptResourceReference.class, useRecent(name));
+        super(WebjarsJavaScriptResourceReference.class, Helper.removeLeadingSlash(useRecent(name)));
 
         this.originalName = name;
     }

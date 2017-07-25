@@ -112,19 +112,19 @@ Wicket contains a filter that prevents arbitrarypackage resources from being ser
 In the initialization of your WebApplication simply add the patterns you want to accept
 
 ```java
-		IPackageResourceGuard packageGuard = getResourceSettings().getPackageResourceGuard();
-		if (packageGuard instanceof SecurePackageResourceGuard) {
-			SecurePackageResourceGuard secGuard = (SecurePackageResourceGuard) packageGuard;
-			secGuard.addPattern("+*.cur");
-			secGuard.addPattern("+*.map");
+  IPackageResourceGuard packageGuard = getResourceSettings().getPackageResourceGuard();
+  if (packageGuard instanceof SecurePackageResourceGuard) {
+    SecurePackageResourceGuard secGuard = (SecurePackageResourceGuard) packageGuard;
+    secGuard.addPattern("+*.cur");
+    secGuard.addPattern("+*.map");
 
-			secGuard.addPattern("+*.svg");
+    secGuard.addPattern("+*.svg");
 
-			secGuard.addPattern("+*.eot");
-			secGuard.addPattern("+*.ttf");
-			secGuard.addPattern("+*.woff");
-			secGuard.addPattern("+*.woff2");
-		}
+    secGuard.addPattern("+*.eot");
+    secGuard.addPattern("+*.ttf");
+    secGuard.addPattern("+*.woff");
+    secGuard.addPattern("+*.woff2");
+  }
 ```
 
 Limitations

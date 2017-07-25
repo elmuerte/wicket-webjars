@@ -24,7 +24,6 @@ public class WicketApplication extends WebApplication {
 		super.init();
 
 		WebjarsSettings settings = new WebjarsSettings();
-		settings.useCdnResources(false);
 
 		WicketWebjars.install(this, settings);
 

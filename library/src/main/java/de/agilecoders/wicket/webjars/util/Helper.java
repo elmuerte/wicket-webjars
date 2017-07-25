@@ -21,7 +21,7 @@ public final class Helper {
         final String cleanedName = appendLeadingSlash(Args.notEmpty(path, "path"));
 
         if (!path.contains(PATH_PREFIX)) {
-            return "webjars" + cleanedName;
+            return "/webjars" + cleanedName;
         }
 
         return path;
