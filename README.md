@@ -104,6 +104,29 @@ public WebjarsComponent extends Panel {
 }
 ```
 
+SecurePackageResourceGuard
+==========================
+
+Wicket contains a filter that prevents arbitrarypackage resources from being served. This filter will however break certain webjars packages. For example, webfonts are not included in this filter in wicket 1.4 so you need to add them manually.
+
+In the initialization of your WebApplication simply add the patterns you want to accept
+
+```java
+		IPackageResourceGuard packageGuard = getResourceSettings().getPackageResourceGuard();
+		if (packageGuard instanceof SecurePackageResourceGuard) {
+			SecurePackageResourceGuard secGuard = (SecurePackageResourceGuard) packageGuard;
+			secGuard.addPattern("+*.cur");
+			secGuard.addPattern("+*.map");
+
+			secGuard.addPattern("+*.svg");
+
+			secGuard.addPattern("+*.eot");
+			secGuard.addPattern("+*.ttf");
+			secGuard.addPattern("+*.woff");
+			secGuard.addPattern("+*.woff2");
+		}
+```
+
 Limitations
 ===========
 
