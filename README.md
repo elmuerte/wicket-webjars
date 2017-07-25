@@ -3,7 +3,7 @@ wicket-webjars-legacy
 
 Integration of webjars for Apache Wicket. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
-Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars-legacy14.svg?branch=master)](https://travis-ci.org/elmuerte/wicket-webjars-legacy14)
+Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars-legacy14.svg)](https://travis-ci.org/elmuerte/wicket-webjars-legacy14)
 
 wicket-webjars dependes on [webjars](https://github.com/webjars/webjars).
 
