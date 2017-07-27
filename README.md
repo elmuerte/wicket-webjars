@@ -8,7 +8,7 @@ Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-web
 wicket-webjars dependes on [webjars](https://github.com/webjars/webjars).
 
 
-**Note** This version is only for wicket 1.4.x.
+**Note** This version is only for wicket 1.4.x. This library is mostly forwards compatible. Once you upgrade to Wicket 6 or later you should be able to replace this library with the standard wicket-webjars.
 
 For newer versions of wicket please use the original [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars).
 
@@ -142,6 +142,7 @@ This does not work by default in wicket-webjars-legacy14, as you are probably no
   mount(new WebjarsRequestTargetUrlCodingStrategy());
 ```
 
+*Note:* this functionality is not forwards compatible.
 
 Limitations
 ===========
