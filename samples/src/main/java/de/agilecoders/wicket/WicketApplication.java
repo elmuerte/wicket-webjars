@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
+import de.agilecoders.wicket.webjars.WebjarsRequestTargetUrlCodingStrategy;
 import de.agilecoders.wicket.webjars.WicketWebjars;
 import de.agilecoders.wicket.webjars.settings.WebjarsSettings;
 
@@ -42,5 +43,8 @@ public class WicketApplication extends WebApplication {
 			secGuard.addPattern("+*.woff");
 			secGuard.addPattern("+*.woff2");
 		}
+
+		// Make /webjars/ urls possible
+		mount(new WebjarsRequestTargetUrlCodingStrategy());
 	}
 }

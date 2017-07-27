@@ -127,13 +127,28 @@ In the initialization of your WebApplication simply add the patterns you want to
   }
 ```
 
+Static Linked Resources
+=======================
+
+In the original wicket-webjars, when running in a Servlet 3+ container you are able to specify URLs like
+
+```html
+<img src="webjars/jquery-ui/1.9.2/css/smoothness/images/ui-icons_cd0a0a_256x240.png"/>
+```
+
+This does not work by default in wicket-webjars-legacy14, as you are probably not running it in a Servlet 3+ container. In order to make this work you can simply mount an additional ```IRequestTargetUrlCodingStrategy``` in your wicket application as follows:
+
+```java
+  mount(new WebjarsRequestTargetUrlCodingStrategy());
+```
+
+
 Limitations
 ===========
 
 The following functionality from wicket-webjars 2.x is not supported in this backport:
 
 - CDN
-- /webjar/ urls in the HTML; this depends on Servlet 3 containers
 
 
 Authors
