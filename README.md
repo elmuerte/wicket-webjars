@@ -3,15 +3,12 @@ wicket-webjars-legacy
 
 Integration of webjars for Apache Wicket. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
-Current build status: [![Build Status](https://travis-ci.org/elmuerte/wicket-webjars-legacy14.svg)](https://travis-ci.org/elmuerte/wicket-webjars-legacy14)
+Current build status: [![Build Status](https://travis-ci.org/mpobjects/wicket4-webjars.svg)](https://travis-ci.org/mpobjects/wicket4-webjars)
 
 wicket-webjars dependes on [webjars](https://github.com/webjars/webjars).
 
 
-**Note** This version is only for wicket 1.4.x. This library is mostly forwards compatible. Once you upgrade to Wicket 6 or later you should be able to replace this library with the standard wicket-webjars.
-
-For newer versions of wicket please use the original [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars).
-
+**Note:** This version is only for wicket 1.4.x. This library is mostly forwards compatible. Once you upgrade to Wicket 6 or later you should be able to replace this library with the standard [wicket-webjars](https://github.com/l0rdn1kk0n/wicket-webjars).
 
 Documentation:
 
@@ -22,8 +19,8 @@ Add maven dependency:
 
 ```xml
 <dependency>
-  <groupId>de.agilecoders.wicket.webjars</groupId>
-  <artifactId>wicket-webjars-legacy14</artifactId>
+  <groupId>com.mpobjects.wicket</groupId>
+  <artifactId>wicket4-webjars</artifactId>
   <version>2.0.4</version>
 </dependency>
 ```
@@ -73,8 +70,8 @@ Add dependencies to your pom.xml:
 ```xml
 <dependencies>
   <dependency>
-      <groupId>de.agilecoders.wicket.webjars</groupId>
-      <artifactId>wicket-webjars-legacy14</artifactId>
+      <groupId>com.mpobjects.wicket</groupId>
+      <artifactId>wicket4-webjars</artifactId>
   </dependency>
 
   <dependency>
@@ -136,13 +133,15 @@ In the original wicket-webjars, when running in a Servlet 3+ container you are a
 <img src="webjars/jquery-ui/1.9.2/css/smoothness/images/ui-icons_cd0a0a_256x240.png"/>
 ```
 
-This does not work by default in wicket-webjars-legacy14, as you are probably not running it in a Servlet 3+ container. In order to make this work you can simply mount an additional ```IRequestTargetUrlCodingStrategy``` in your wicket application as follows:
+This does not work by default in wicket4-webjars, as you are probably not running it in a Servlet 3+ container. In order to make this work you can simply mount an additional ```IRequestTargetUrlCodingStrategy``` in your wicket application as follows:
 
 ```java
   mount(new WebjarsRequestTargetUrlCodingStrategy());
 ```
 
-*Note:* this functionality is not forwards compatible.
+An alternative method is by using the [Servlet 2 setup provided by WebJars](https://www.webjars.org/documentation#servlet2).
+
+*Note:* this functionality is not forwards compatible. When using a Servlet 3 container you do not need it.
 
 Limitations
 ===========
