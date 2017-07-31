@@ -8,28 +8,28 @@
         <version>7</version>
     </parent>
 
-    <groupId>de.agilecoders.wicket.webjars</groupId>
-    <artifactId>wicket-webjars-legacy14-parent</artifactId>
+    <groupId>com.mpobjects.wicket</groupId>
+    <artifactId>wicket4-webjars-parent</artifactId>
     <packaging>pom</packaging>
     <version>2.0.4-SNAPSHOT</version>
-    <name>wicket-webjars-parent</name>
+    <name>wicket4-webjars-parent</name>
     <description />
-    <url>https://github.com/l0rdn1kk0n/wicket-webjars</url>
+    <url>https://github.com/mpobjects/wicket4-webjars</url>
 
     <scm>
-        <url>git@github.com:l0rdn1kk0n/wicket-webjars.git</url>
-        <connection>scm:git:git@github.com:l0rdn1kk0n/wicket-webjars.git</connection>
-        <developerConnection>scm:git:git@github.com:l0rdn1kk0n/wicket-webjars.git</developerConnection>
+        <url>git@github.com:mpobjects/wicket4-webjars.git</url>
+        <connection>scm:git:git@github.com:mpobjects/wicket4-webjars.git</connection>
+        <developerConnection>scm:git:git@github.com:mpobjects/wicket4-webjars.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/l0rdn1kk0n/wicket-webjars/issues</url>
+        <url>https://github.com/mpobjects/wicket4-webjars/issues</url>
     </issueManagement>
 
     <organization>
-        <name>agilecoders.de</name>
-        <url>http://agilecoders.de</url>
+        <name>MP Objects</name>
+        <url>http://www.mp-objects.com</url>
     </organization>
 
     <modules>
@@ -52,8 +52,8 @@
         <dependencies>
             <!-- PROJECT DEPENDENCIES -->
             <dependency>
-                <groupId>de.agilecoders.wicket.webjars</groupId>
-                <artifactId>wicket-webjars-legacy14</artifactId>
+                <groupId>com.mpobjects.wicket</groupId>
+            	<artifactId>wicket4-webjars</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -196,6 +196,19 @@
                 <role>Committer</role>
             </roles>
         </developer>
+        <developer>
+            <id>elmuerte</id>
+            <name>Michiel Hendriks</name>
+            <email>michiel.hendriks@mp-objects.com</email>
+            <organization>MP Objects BV</organization>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
     </developers>
 
+    <ciManagement>
+    	<system>TravisCI</system>
+    	<url>https://travis-ci.org/mpobjects/wicket4-webjars</url>
+    </ciManagement>
 </project>
