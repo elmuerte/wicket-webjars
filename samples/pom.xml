@@ -9,7 +9,7 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>samples-legacy14</artifactId>
+    <artifactId>wicket4-webjars-samples</artifactId>
     <packaging>war</packaging>
     <name>samples</name>
 

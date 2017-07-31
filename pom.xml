@@ -1,214 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
+	<groupId>com.mpobjects.wicket</groupId>
+	<artifactId>wicket4-webjars-parent</artifactId>
+	<packaging>pom</packaging>
+	<version>2.0.4-SNAPSHOT</version>
+	<name>wicket4-webjars-parent</name>
+	<description />
+	<url>https://github.com/mpobjects/wicket4-webjars</url>
 
-    <groupId>com.mpobjects.wicket</groupId>
-    <artifactId>wicket4-webjars-parent</artifactId>
-    <packaging>pom</packaging>
-    <version>2.0.4-SNAPSHOT</version>
-    <name>wicket4-webjars-parent</name>
-    <description />
-    <url>https://github.com/mpobjects/wicket4-webjars</url>
+	<scm>
+		<url>https://github.com/mpobjects/wicket4-webjars.git</url>
+		<connection>scm:git:https://github.com/mpobjects/wicket4-webjars.git</connection>
+		<developerConnection>scm:git:https://github.com/mpobjects/wicket4-webjars.git</developerConnection>
+	</scm>
 
-    <scm>
-        <url>git@github.com:mpobjects/wicket4-webjars.git</url>
-        <connection>scm:git:git@github.com:mpobjects/wicket4-webjars.git</connection>
-        <developerConnection>scm:git:git@github.com:mpobjects/wicket4-webjars.git</developerConnection>
-    </scm>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/mpobjects/wicket4-webjars/issues</url>
+	</issueManagement>
 
-    <issueManagement>
-        <system>github</system>
-        <url>https://github.com/mpobjects/wicket4-webjars/issues</url>
-    </issueManagement>
+	<organization>
+		<name>MP Objects</name>
+		<url>http://www.mp-objects.com</url>
+	</organization>
 
-    <organization>
-        <name>MP Objects</name>
-        <url>http://www.mp-objects.com</url>
-    </organization>
+	<modules>
+		<module>library</module>
+		<module>samples</module>
+	</modules>
 
-    <modules>
-        <module>library</module>
-        <module>samples</module>
-    </modules>
+	<properties>
+		<github.global.server>github</github.global.server>
 
-    <properties>
-        <github.global.server>github</github.global.server>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+		<mvn.build.java.version>1.6</mvn.build.java.version>
+		<wicket.version>[1.4,1.4.99]</wicket.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<junit.version>4.12</junit.version>
+	</properties>
 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-        <mvn.build.java.version>1.6</mvn.build.java.version>
-        <wicket.version>[1.4,1.4.99]</wicket.version>
-        <slf4j.version>1.7.25</slf4j.version>
-        <junit.version>4.12</junit.version>
-    </properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- PROJECT DEPENDENCIES -->
+			<dependency>
+				<groupId>com.mpobjects.wicket</groupId>
+				<artifactId>wicket4-webjars</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- PROJECT DEPENDENCIES -->
-            <dependency>
-                <groupId>com.mpobjects.wicket</groupId>
-            	<artifactId>wicket4-webjars</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+			<!-- WICKET DEPENDENCIES -->
+			<dependency>
+				<groupId>org.apache.wicket</groupId>
+				<artifactId>wicket</artifactId>
+				<version>${wicket.version}</version>
+			</dependency>
 
-            <!-- WICKET DEPENDENCIES -->
-            <dependency>
-                <groupId>org.apache.wicket</groupId>
-                <artifactId>wicket</artifactId>
-                <version>${wicket.version}</version>
-            </dependency>
+			<!-- LOGGING DEPENDENCIES - LOG4J -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
 
-            <!-- LOGGING DEPENDENCIES - LOG4J -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api </artifactId>
+				<version>2.3</version>
+			</dependency>
 
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api </artifactId>
-                <version>2.3</version>
-            </dependency>
+			<!-- TESTING DEPENDENCIES -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <!-- TESTING DEPENDENCIES -->
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
+		</dependencies>
+	</dependencyManagement>
 
 
-    <build>
-        <resources>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <filtering>false</filtering>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
+	<build>
+		<resources>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
 
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>${mvn.build.java.version}</source>
-                    <target>${mvn.build.java.version}</target>
-                    <compilerVersion>${mvn.build.java.version}</compilerVersion>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <showDeprecation>true</showDeprecation>
-                    <showWarnings>true</showWarnings>
-                    <optimize>true</optimize>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.3</version>
-                <inherited>true</inherited>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jar</goal>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>${mvn.build.java.version}</source>
+					<target>${mvn.build.java.version}</target>
+					<compilerVersion>${mvn.build.java.version}</compilerVersion>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<optimize>true</optimize>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.3</version>
+				<inherited>true</inherited>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-    <developers>
-        <developer>
-            <id>miha</id>
-            <name>Michael Haitz</name>
-            <email>michael.haitz@agilecoders.de</email>
-            <organization>agilecoders.de</organization>
-            <roles>
-                <role>Owner</role>
-                <role>Committer</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>martin-g</id>
-            <name>Martin Grigorov</name>
-            <email>mgrigorov@apache.org</email>
-            <organization>Apache Software Organization</organization>
-            <roles>
-                <role>Committer</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>elmuerte</id>
-            <name>Michiel Hendriks</name>
-            <email>michiel.hendriks@mp-objects.com</email>
-            <organization>MP Objects BV</organization>
-            <roles>
-                <role>Committer</role>
-            </roles>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>miha</id>
+			<name>Michael Haitz</name>
+			<email>michael.haitz@agilecoders.de</email>
+			<organization>agilecoders.de</organization>
+			<roles>
+				<role>Owner</role>
+				<role>Committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>martin-g</id>
+			<name>Martin Grigorov</name>
+			<email>mgrigorov@apache.org</email>
+			<organization>Apache Software Organization</organization>
+			<roles>
+				<role>Committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>elmuerte</id>
+			<name>Michiel Hendriks</name>
+			<email>michiel.hendriks@mp-objects.com</email>
+			<organization>MP Objects BV</organization>
+			<roles>
+				<role>Committer</role>
+			</roles>
+		</developer>
+	</developers>
 
-    <ciManagement>
-    	<system>TravisCI</system>
-    	<url>https://travis-ci.org/mpobjects/wicket4-webjars</url>
-    </ciManagement>
+	<ciManagement>
+		<system>TravisCI</system>
+		<url>https://travis-ci.org/mpobjects/wicket4-webjars</url>
+	</ciManagement>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 </project>
