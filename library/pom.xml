@@ -11,7 +11,7 @@
 
     <artifactId>wicket4-webjars</artifactId>
     <packaging>jar</packaging>
-    <name>library</name>
+    <name>Wicket 1.4 Webjars</name>
 
     <dependencies>
         <!-- WICKET DEPENDENCIES -->
@@ -55,4 +55,7 @@
         </dependency>
 
     </dependencies>
+    <url>https://github.com/mpobjects/wicket4-webjars</url>
+    <description>Webjars integration for Wicket 1.4. 
+Based on the original wicket-webjar library which provides webjars integration for Wicket 6 and later: https://github.com/l0rdn1kk0n/wicket-webjars</description>
 </project>
