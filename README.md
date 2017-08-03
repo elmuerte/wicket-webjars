@@ -1,7 +1,7 @@
-wicket-webjars-legacy
-=====================
+wicket4-webjars
+===============
 
-Integration of webjars for Apache Wicket. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
+Integration of webjars for Apache Wicket 1.4. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
 Current build status: [![Build Status](https://travis-ci.org/mpobjects/wicket4-webjars.svg)](https://travis-ci.org/mpobjects/wicket4-webjars)
 
