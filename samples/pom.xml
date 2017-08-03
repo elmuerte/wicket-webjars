@@ -11,7 +11,7 @@
 
     <artifactId>wicket4-webjars-samples</artifactId>
     <packaging>war</packaging>
-    <name>samples</name>
+    <name>Wicket 1.4 Webjars Sample</name>
 
     <dependencies>
         <dependency>
@@ -85,4 +85,5 @@
             </testResource>
         </testResources>
     </build>
+    <description>Sample application of the Wicket 1.4 Webjars integration.</description>
 </project>
