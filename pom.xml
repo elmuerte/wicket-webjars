@@ -5,7 +5,7 @@
 	<groupId>com.mpobjects.wicket</groupId>
 	<artifactId>wicket4-webjars-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>2.0.4-SNAPSHOT</version>
+	<version>2.0.5-SNAPSHOT</version>
 	<name>wicket4-webjars-parent</name>
 	<description>Parent POM for wicket4-webjars</description>
 	<url>https://github.com/mpobjects/wicket4-webjars</url>
