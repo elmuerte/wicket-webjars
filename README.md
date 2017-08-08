@@ -28,20 +28,20 @@ Add maven dependency:
 Installation:
 
 ```java
-    /**
-     * @see org.apache.wicket.Application#init()
-     */
-    @Override
-    public void init() {
-        super.init();
+  /**
+   * @see org.apache.wicket.Application#init()
+   */
+  @Override
+  public void init() {
+    super.init();
 
-        // install 3 default collector instances
-        // (FileAssetPathCollector(WEBJARS_PATH_PREFIX), JarAssetPathCollector, VfsAssetPathCollector)
-        // and a webjars resource finder.
-        WebjarsSettings settings = new WebjarsSettings();
+    // install 3 default collector instances
+    // (FileAssetPathCollector(WEBJARS_PATH_PREFIX), JarAssetPathCollector, VfsAssetPathCollector)
+    // and a webjars resource finder.
+    WebjarsSettings settings = new WebjarsSettings();
 
-        WicketWebjars.install(this, settings);
-    }
+    WicketWebjars.install(this, settings);
+  }
 ```
 
 Usage
@@ -53,14 +53,32 @@ Add a webjars resource reference (css,js) to your IHeaderResponse:
 public WebjarsComponent extends Panel {
 
   public WebjarsComponent(String id) {
-      super(id);
+    super(id);
   }
 
   @Override
   public void renderHead(IHeaderResponse response) {
     super.renderHead(response);
 
-    response.render(JavaScriptHeaderItem.forReference(new WebjarsJavaScriptResourceReference("jquery/1.8.3/jquery.js")));
+    response.getHeaderResponse().renderJavascriptReference(new WebjarsJavaScriptResourceReference("jquery/1.12.4/jquery.min.js"));
+    response.getHeaderResponse().renderCSSReference(new WebjarsCssResourceReference("bootstrap/3.3.7/css/bootstrap.css"));
+  }
+}
+```
+
+Or via header contributors:
+
+```java
+public WebjarsComponent extends Panel {
+
+  public WebjarsComponent(String id) {
+    super(id);
+  }
+
+  @Override
+  protected void onInitialize() {
+    add(JavascriptPackageResource.getHeaderContribution(new WebjarsJavaScriptResourceReference("jquery/1.12.4/jquery.min.js")));
+    add(CSSPackageResource.getHeaderContribution(new WebjarsCssResourceReference("bootstrap/3.3.7/css/bootstrap.css")));
   }
 }
 ```
@@ -89,7 +107,7 @@ name gets resolved this string will be replaced by recent available version in c
 public WebjarsComponent extends Panel {
 
   public WebjarsComponent(String id) {
-      super(id);
+    super(id);
   }
 
   @Override
@@ -141,7 +159,7 @@ This does not work by default in wicket4-webjars, as you are probably not runnin
 
 An alternative method is by using the [Servlet 2 setup provided by WebJars](https://www.webjars.org/documentation#servlet2).
 
-*Note:* this functionality is not forwards compatible. When using a Servlet 3 container you do not need it.
+*Note:* this functionality is not forwards compatible, as it does not exist in the upstream library.
 
 Limitations
 ===========
