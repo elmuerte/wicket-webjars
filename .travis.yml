@@ -1,11 +1,11 @@
 language: java
 dist: precise
-
 jdk:
 - openjdk6
-
+env:
+  global:
+    secure: hGed4lGGRLZ72ObwDtNWjHTSZvqTqXlogz2psJihV3hTT6GFxpYE82LIiSeFdQeCyBSgTPU88IpLmJfFuGYffwggwUljeuCgI4Bybpk0n+CjgEUDCv0gER7+gl+4XkqQ4j73IS1kDsRDCuIa6wP5pUpmYZCQ/sXTe7QVVDCy2kWeTsi/KYBLEi2sdm2O4ywIYQtIwHg8Wu+CL1vy9xQh5zVtz1XOrrWSYZh3wNNY9B02p7lKWvvZPmFnNE+e99C3nmeLB+DKPXqer8ef2xuh+JLY6RGVgs2n6wziN1mYbZeHsze1ri5BjZLvwO3PNBohexn9LE1XKekVlJzCRhT+sYxNPVvBf3f1fPVxyGbvKmKK/6a37DA5pYspqjzx4sTobnaZHMWSZ3QY9WNvXjY/0WJb0vj5Fe5qImeGqUh0Al6xm8qBl86ZdDYWJByTeG+lC6GxA9JLheiPk9FeWqbhIiWmo7hLYybN58Z5BOB+SYDLqrAhhDjNOWVPGR7qxUoGTksJvcdR+Up2IIPvbHFis1/4fn24ZFcgMvGCuSTarchQwxPMIedc1M/UR+Ir0mOGbHG1SKKr+s2OgFfSM/8Hq3WiBseJap7F3z+psBEs6G5Z4tux77BTz4bgPbCoWzlxRSnK/YjC0fjwQTusLOgRbjfh93hexpeeZTPRET2sCS0=
 before_install:
-- openssl aes-256-cbc -K $encrypted_b5ec64ff9631_key -iv $encrypted_b5ec64ff9631_iv -in src/deploy/private.key.enc -out src/deploy/private.key -d
+- echo $setecastronomy | gpg --passphrase-fd 0 -o src/deploy/private.key src/deploy/private.key.enc
 - gpg --import src/deploy/private.key
-
 install: mvn deploy
