@@ -4,4 +4,8 @@ dist: precise
 jdk:
 - openjdk6
 
-install: mvn install -Dgpg.skip
+before_install:
+- openssl aes-256-cbc -K $encrypted_b5ec64ff9631_key -iv $encrypted_b5ec64ff9631_iv -in src/deploy/private.key.enc -out src/deploy/private.key -d
+- gpg --import src/deploy/private.key
+
+install: mvn deploy
