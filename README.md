@@ -1,5 +1,4 @@
-wicket4-webjars
-===============
+# wicket4-webjars
 
 Integration of webjars for Apache Wicket 1.4. This is a backport of wicket-webjars 2.0.4 to Wicket 1.4.x.
 
@@ -15,7 +14,9 @@ Documentation:
 - [Webjars Documentation](http://www.webjars.org/documentation)
 - [Available Webjars](http://www.webjars.org)
 
-Add maven dependency:
+## Latest Release
+
+[![Maven Central](https://img.shields.io/maven-central/v/com.mpobjects.wicket/wicket4-webjars.svg)](http://www.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mpobjects.wicket%22%20AND%20a%3A%22wicket4-webjars%22)
 
 ```xml
 <dependency>
@@ -25,7 +26,7 @@ Add maven dependency:
 </dependency>
 ```
 
-Installation:
+## Installation
 
 ```java
   /**
@@ -44,8 +45,7 @@ Installation:
   }
 ```
 
-Usage
-=====
+## Usage
 
 Add a webjars resource reference (css,js) to your IHeaderResponse:
 
@@ -119,8 +119,7 @@ public WebjarsComponent extends Panel {
 }
 ```
 
-SecurePackageResourceGuard
-==========================
+### SecurePackageResourceGuard
 
 Wicket contains a filter that prevents arbitrarypackage resources from being served. This filter will however break certain webjars packages. For example, webfonts are not included in this filter in wicket 1.4 so you need to add them manually.
 
@@ -142,8 +141,7 @@ In the initialization of your WebApplication simply add the patterns you want to
   }
 ```
 
-Static Linked Resources
-=======================
+### Static Linked Resources
 
 In the original wicket-webjars, when running in a Servlet 3+ container you are able to specify URLs like
 
@@ -161,22 +159,15 @@ An alternative method is by using the [Servlet 2 setup provided by WebJars](http
 
 *Note:* this functionality is not forwards compatible, as it does not exist in the upstream library.
 
-Limitations
-===========
+## Limitations
 
 The following functionality from wicket-webjars 2.x is not supported in this backport:
 
 - CDN
 
+# Authors
 
-Authors
--------
-
-[![Ohloh profile for Michael Haitz](https://www.openhub.net/accounts/l0rdn1kk0n/widgets/account_detailed.gif)](https://www.openhub.net/accounts/l0rdn1kk0n?ref=Detailed)
-
-[![Ohloh profile for Martin Grigorov](https://www.openhub.net/accounts/mgrigorov/widgets/account_detailed.gif)](https://www.openhub.net/accounts/mgrigorov?ref=Detailed)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/l0rdn1kk0n/wicket-webjars/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-Michiel Hendriks (wicket 1.4.x backport)
+   * Michael Haitz
+   * Martin Grigorov
+   * Michiel Hendriks (wicket 1.4.x backport)
 
