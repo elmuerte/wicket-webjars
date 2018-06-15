@@ -2,8 +2,8 @@ dist: precise
 language: java
 jdk: openjdk6
 branches: 
-only:
-- master
+  only:
+  - master
 cache:
   directories:
   - "$HOME/.m2"
