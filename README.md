@@ -16,7 +16,7 @@ Documentation:
 
 ## Latest Release
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.mpobjects.wicket/wicket4-webjars.svg)](http://www.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mpobjects.wicket%22%20AND%20a%3A%22wicket4-webjars%22)
+[![Maven Central](https://img.shields.io/maven-central/v/com.mpobjects.wicket/wicket4-webjars.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.mpobjects.wicket%22%20AND%20a:%22wicket4-webjars%22)
 
 ```xml
 <dependency>
